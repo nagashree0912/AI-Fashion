@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleSai - AI Fashion Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>StyleSai</h1>
+                <span class="tagline">AI Fashion Stylist</span>
+            </div>
+            
+            <!-- Main Navigation -->
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <div class="nav-dropdown">
+                    <a href="#menswear" class="nav-link">Men <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#menswear" data-sub="shirts">Shirts</a>
+                        <a href="#menswear" data-sub="tshirts">T-Shirts</a>
+                        <a href="#menswear" data-sub="blazers">Blazers</a>
+                        <a href="#menswear" data-sub="hoodies">Hoodies</a>
+                        <a href="#menswear" data-sub="sweatshirts">Sweatshirts</a>
+                        <a href="#menswear" data-sub="pants">Pants</a>
+                        <a href="#menswear" data-sub="footwear">Footwear</a>
+                        <a href="#menswear" data-sub="accessories">Accessories</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <a href="#womenswear" class="nav-link">Women <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#womenswear" data-sub="tops">Tops</a>
+                        <a href="#womenswear" data-sub="long_frocks">Long Frocks</a>
+                        <a href="#womenswear" data-sub="sleeveless">Sleeveless</a>
+                        <a href="#womenswear" data-sub="ethnic_wear">Ethnic Wear</a>
+                        <a href="#womenswear" data-sub="bottoms">Bottoms</a>
+                        <a href="#womenswear" data-sub="footwear">Footwear</a>
+                        <a href="#womenswear" data-sub="accessories">Accessories</a>
+                    </div>
+                </div>
+<a href="#kidswear" class="nav-link">Kids</a>
+                <a href="#genz" class="nav-link">GenZ</a>
+                <a href="#jewelry" class="nav-link">Jewelry</a>
+                <a href="#ai-features" class="nav-link">AI Features</a>
+            </nav>
+            
+            <div class="header-actions">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-box-header">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="headerSearchInput" placeholder="Search products..." autocomplete="off">
+                        <div class="search-dropdown" id="searchDropdown">
+                            <div class="recent-searches" id="recentSearches">
+                                <h4>Recent Searches</h4>
+                                <div class="recent-list" id="recentList"></div>
+                            </div>
+                            <div class="search-suggestions" id="searchSuggestions"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Auth Buttons -->
+                <div class="auth-buttons" id="authButtons">
+                    <button class="btn-login" id="loginBtn">Login</button>
+                    <button class="btn-signup" id="signupBtn">Sign Up</button>
+                </div>
+                
+                <!-- User Profile (shown when logged in) -->
+                <div class="user-profile" id="userProfile" style="display: none;">
+                    <button class="user-btn">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="userName">User</span>
+                    </button>
+                    <button class="logout-btn" id="logoutBtn">Logout</button>
+                </div>
+                
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-badge">✨ AI-Powered Fashion</span>
+            <h1>Discover Your<br>Perfect Style</h1>
+            <p>Get personalized outfit recommendations, smart matching, and styling advice powered by advanced AI. Your personal fashion stylist is just a click away.</p>
+            <div class="hero-buttons">
+                <a href="#menswear" class="btn btn-primary">Shop Men's</a>
+                <a href="#womenswear" class="btn btn-secondary">Shop Women's</a>
+            </div>
+            
+            <div class="hero-features">
+                <div class="feature">
+                    <i class="fas fa-magic"></i>
+                    <span>Smart Outfit Matching</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Styling Advice</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-image"></i>
+                    <span>Image Analysis</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-image-container">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop" alt="Fashion" class="hero-image">
+                <div class="floating-card card-1">
+                    <i class="fas fa-check-circle"></i>
+                    <span>98% Match Found!</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Perfect for Summer</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Features Section -->
+    <section class="ai-features" id="ai-features">
+        <div class="section-header">
+            <h2>AI-Powered Features</h2>
+            <p>Experience the future of fashion with our intelligent AI</p>
+        </div>
+        
+        <div class="ai-features-grid">
+            <div class="ai-feature-card" onclick="openAIChat()">
+                <div class="ai-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>AI Stylist Chat</h3>
+                <p>Chat with our AI to get personalized fashion advice</p>
+            </div>
+            
+            <div class="ai-feature-card" onclick="openImageUpload()">
+                <div class="ai-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <h3>Analyze Your Style</h3>
+                <p>Upload a photo and get AI-powered style analysis</p>
+            </div>
+            
+            <div class="ai-feature-card" onclick="openOutfitBuilder()">
+                <div class="ai-icon">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <h3>Outfit Builder</h3>
+                <p>AI suggests matching pieces for your selected item</p>
+            </div>
+            
+            <div class="ai-feature-card" onclick="openTrends()">
+                <div class="ai-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <h3>Trending Now</h3>
+                <p>Discover latest fashion trends</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section - Men's -->
+    <section class="products-section" id="menswear">
+        <div class="section-header">
+            <h2>Men's Collection</h2>
+            <p>Discover curated styles for the modern man</p>
+        </div>
+        
+        <div class="category-tabs">
+            <button class="tab-btn active" data-category="menswear" data-subcategory="all">All</button>
+            <button class="tab-btn" data-category="menswear" data-subcategory="shirts">Shirts</button>
+            <button class="tab-btn" data-category="menswear" data-subcategory="tshirts">T-Shirts</button>
+            <button class="tab-btn" data-category="menswear" data-subcategory="blazers">Blazers</button>
+            <button class="tab-btn" data-category="menswear" data-subcategory="hoodies">Hoodies</button>
+            <button class="tab-btn" data-category="menswear" data-subcategory="sweatshirts">Sweatshirts</button>
+            <button class="tab-btn" data-category="menswear" data-subcategory="pants">Pants</button>
+            <button class="tab-btn" data-category="menswear" data-subcategory="footwear">Footwear</button>
+            <button class="tab-btn" data-category="menswear" data-subcategory="accessories">Accessories</button>
+        </div>
+        
+        <div class="products-grid" id="menswear-products"></div>
+    </section>
+
+    <!-- Products Section - Women's -->
+    <section class="products-section" id="womenswear">
+        <div class="section-header">
+            <h2>Women's Collection</h2>
+            <p>Explore elegance and style for every occasion</p>
+        </div>
+        
+        <div class="category-tabs">
+            <button class="tab-btn active" data-category="womenswear" data-subcategory="all">All</button>
+            <button class="tab-btn" data-category="womenswear" data-subcategory="tops">Tops</button>
+            <button class="tab-btn" data-category="womenswear" data-subcategory="long_frocks">Long Frocks</button>
+            <button class="tab-btn" data-category="womenswear" data-subcategory="sleeveless">Sleeveless</button>
+            <button class="tab-btn" data-category="womenswear" data-subcategory="ethnic_wear">Ethnic Wear</button>
+            <button class="tab-btn" data-category="womenswear" data-subcategory="bottoms">Bottoms</button>
+            <button class="tab-btn" data-category="womenswear" data-subcategory="footwear">Footwear</button>
+            <button class="tab-btn" data-category="womenswear" data-subcategory="accessories">Accessories</button>
+        </div>
+        
+        <div class="products-grid" id="womenswear-products"></div>
+    </section>
+
+    <!-- Products Section - Kids -->
+    <section class="products-section" id="kidswear">
+        <div class="section-header">
+            <h2>Kids Collection</h2>
+            <p>Comfortable and stylish options for your little ones</p>
+        </div>
+        
+        <div class="category-tabs">
+            <button class="tab-btn active" data-category="kidswear" data-subcategory="all">All</button>
+            <button class="tab-btn" data-category="kidswear" data-subcategory="boys">Boys</button>
+            <button class="tab-btn" data-category="kidswear" data-subcategory="girls">Girls</button>
+            <button class="tab-btn" data-category="kidswear" data-subcategory="accessories">Accessories</button>
+        </div>
+        
+        <div class="products-grid" id="kidswear-products"></div>
+    </section>
+
+    <!-- Products Section - GenZ -->
+    <section class="products-section" id="genz">
+        <div class="section-header">
+            <h2>GenZ Collection</h2>
+            <p>Trendy streetwear for the new generation</p>
+        </div>
+        
+        <div class="category-tabs">
+            <button class="tab-btn active" data-category="genz" data-subcategory="all">All</button>
+            <button class="tab-btn" data-category="genz" data-subcategory="oversized">Oversized</button>
+            <button class="tab-btn" data-category="genz" data-subcategory="cargo">Cargo</button>
+            <button class="tab-btn" data-category="genz" data-subcategory="hoodies">Hoodies</button>
+            <button class="tab-btn" data-category="genz" data-subcategory="pants">Pants</button>
+            <button class="tab-btn" data-category="genz" data-subcategory="jackets">Jackets</button>
+            <button class="tab-btn" data-category="genz" data-subcategory="footwear">Footwear</button>
+            <button class="tab-btn" data-category="genz" data-subcategory="accessories">Accessories</button>
+        </div>
+        
+<div class="products-grid" id="genz-products"></div>
+    </section>
+
+    <!-- Products Section - Jewelry -->
+    <section class="products-section" id="jewelry">
+        <div class="section-header">
+            <h2>Jewelry Collection</h2>
+            <p>Exquisite jewelry for every occasion</p>
+        </div>
+        
+        <div class="category-tabs">
+            <button class="tab-btn active" data-category="jewelry" data-subcategory="all">All</button>
+            <button class="tab-btn" data-category="jewelry" data-subcategory="nose_piercing">Nose Piercing</button>
+            <button class="tab-btn" data-category="jewelry" data-subcategory="ear_piercing">Ear Piercing</button>
+            <button class="tab-btn" data-category="jewelry" data-subcategory="jhumkas">Jhumkas</button>
+            <button class="tab-btn" data-category="jewelry" data-subcategory="necklaces">Necklaces</button>
+            <button class="tab-btn" data-category="jewelry" data-subcategory="chains">Chains</button>
+            <button class="tab-btn" data-category="jewelry" data-subcategory="designer_bangles">Designer Bangles</button>
+        </div>
+        
+        <div class="products-grid" id="jewelry-products"></div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-btn" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal"><i class="fas fa-times"></i></button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- AI Chat Modal -->
+    <div class="modal" id="aiChatModal">
+        <div class="modal-content chat-modal">
+            <button class="close-modal" id="closeChat"><i class="fas fa-times"></i></button>
+            
+            <div class="chat-header">
+                <h3><i class="fas fa-robot"></i> AI Style Advisor</h3>
+                <p>Get personalized fashion advice</p>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-icon"><i class="fas fa-robot"></i></div>
+                    <div class="message-content">
+                        <p>Hello! I'm your AI fashion stylist. Ask me anything about:</p>
+                        <ul>
+                            <li>What to wear for a specific occasion</li>
+                            <li>Color coordination tips</li>
+                            <li>Outfit recommendations</li>
+                            <li>Current fashion trends</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quick-questions">
+                <button class="quick-btn" data-question="What should I wear for a wedding?">Wedding?</button>
+                <button class="quick-btn" data-question="Give me casual weekend outfit ideas">Casual Weekend</button>
+                <button class="quick-btn" data-question="Best colors for summer 2024">Summer Colors</button>
+                <button class="quick-btn" data-question="How to style oversized clothes?">Oversized Style</button>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Ask for fashion advice...">
+                <button class="send-btn" id="sendChat"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Upload Modal -->
+    <div class="modal" id="imageUploadModal">
+        <div class="modal-content upload-modal">
+            <button class="close-modal" id="closeUpload"><i class="fas fa-times"></i></button>
+            
+            <div class="upload-header">
+                <h3><i class="fas fa-camera"></i> Analyze Your Style</h3>
+                <p>Upload a photo of any clothing item</p>
+            </div>
+            
+            <div class="upload-area" id="uploadArea">
+                <input type="file" id="imageInput" accept="image/*" hidden>
+                <div class="upload-placeholder" id="uploadPlaceholder">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Click to upload or drag and drop</p>
+                    <span>PNG, JPG up to 10MB</span>
+                </div>
+                <img id="previewImage" class="preview-image" style="display: none;">
+            </div>
+            
+            <div class="analysis-result" id="analysisResult" style="display: none;">
+                <h4>Analysis Results</h4>
+                <div id="analysisContent"></div>
+            </div>
+            
+            <button class="btn btn-primary" id="analyzeBtn" disabled>
+                <i class="fas fa-magic"></i> Analyze Image
+            </button>
+        </div>
+    </div>
+
+    <!-- Outfit Builder Modal -->
+    <div class="modal" id="outfitBuilderModal">
+        <div class="modal-content builder-modal">
+            <button class="close-modal" id="closeBuilder"><i class="fas fa-times"></i></button>
+            
+            <div class="builder-header">
+                <h3><i class="fas fa-tshirt"></i> Outfit Builder</h3>
+                <p>Select an item to see matching pieces</p>
+            </div>
+            
+            <div class="builder-content">
+                <div class="builder-selection">
+                    <h4>Choose a product:</h4>
+                    <div class="builder-products" id="builderProducts"></div>
+                </div>
+                
+                <div class="builder-results" id="builderResults" style="display: none;">
+                    <h4>Complete Your Look</h4>
+                    <div class="match-score">
+                        <span>Match Score:</span>
+                        <span class="score-value" id="matchScore">0%</span>
+                    </div>
+                    <div class="matching-items" id="matchingItems"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Results Modal -->
+    <div class="modal" id="searchResultsModal">
+        <div class="modal-content search-modal">
+            <button class="close-modal" id="closeSearchResults"><i class="fas fa-times"></i></button>
+            
+            <div class="search-results-header">
+                <h3>Search Results</h3>
+                <p id="searchQueryDisplay"></p>
+            </div>
+            
+            <div class="search-results-grid" id="searchResultsGrid"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>StyleSai</h3>
+                <p>Your AI-powered personal fashion stylist.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#menswear">Men's Wear</a></li>
+                    <li><a href="#womenswear">Women's Wear</a></li>
+                    <li><a href="#kidswear">Kids Wear</a></li>
+                    <li><a href="#genz">GenZ Collection</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>AI Features</h4>
+                <ul>
+                    <li><a href="#" onclick="openAIChat()">AI Chat</a></li>
+                    <li><a href="#" onclick="openImageUpload()">Image Analysis</a></li>
+                    <li><a href="#" onclick="openOutfitBuilder()">Outfit Builder</a></li>
+                    <li><a href="#" onclick="openTrends()">Trends</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 StyleSai. All rights reserved. Powered by AI</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
